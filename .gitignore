@@ -1,4 +1,6 @@
-build/*
+/build/*
+/build.properties
+/src/log4j.properties
 
 *.class
 
@@ -6,3 +8,4 @@ build/*
 *.jar
 *.war
 *.ear
+
