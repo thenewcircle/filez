@@ -63,7 +63,8 @@ public class FilezServlet extends WebdavServlet {
 		String path = getRelativePath(req);
 		Matcher baseUriMatcher = this.baseUriPattern.matcher(path);
 		if (baseUriMatcher.matches()) {
-			if (baseUriMatcher.group(2) == null) {
+			String remainder = baseUriMatcher.group(2);
+			if (remainder == null || remainder.isEmpty()) {
 				File file = new File(super.getServletContext()
 						.getRealPath(path));
 				if (file.exists()) {
@@ -88,8 +89,11 @@ public class FilezServlet extends WebdavServlet {
 						return;
 					}
 				}
+			} else {
+				// not a base-uri request; ignoring
 			}
 		} else {
+			// TODO: this should really go to a filter
 			if (logger.isErrorEnabled()) {
 				logger.error("Path [" + path
 						+ "] does not match baseUriPattern=["

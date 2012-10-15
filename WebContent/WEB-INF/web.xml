@@ -85,7 +85,7 @@
 	<env-entry>
 		<env-entry-name>com.marakana.filez.web.FilezServlet.baseUriPattern</env-entry-name>
 		<env-entry-type>java.lang.String</env-entry-type>
-		<env-entry-value>^(/class/[^/]+/files/)(.*)</env-entry-value>
+		<env-entry-value>^(/class/[0-9]+/files/)(.*)$</env-entry-value>
 	</env-entry>
 
 	<filter>
