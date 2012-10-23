@@ -67,7 +67,7 @@
 
   <xsl:template match="entry">
     <xsl:variable name="urlPath" select="fn:replace(@urlPath, '^.+/([^/+]/?)', '$1')"/>
-    <xsl:if test="not(fn:starts-with($urlPath,'._'))">
+    <xsl:if test="not(fn:matches($urlPath,'.(_|DS_Store)'))">
       <tr>
         <td class="file-name">
           <a href="{$urlPath}"><tt><xsl:apply-templates/></tt></a>
