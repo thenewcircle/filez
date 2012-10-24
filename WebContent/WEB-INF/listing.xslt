@@ -11,7 +11,8 @@
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
       <title> Directory Listing For <xsl:value-of select="$directory"/></title>
-      <link href="/styles/style.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="/styles/style.css" type="text/css"/>
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     </head>
     <body>
