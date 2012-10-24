@@ -67,6 +67,12 @@ public class HostToPathAccessControlFilter implements Filter {
 				if (hostnameRealm != null && hostnameRealm.equals(pathRealm)
 						&& hostnameContext != null
 						&& hostnameContext.equals(pathContext)) {
+					if (logger.isTraceEnabled()) {
+						logger.trace("Hostname to path check passed ["
+								+ hostnameRealm + "=" + pathRealm + "], ["
+								+ hostnameContext + "=" + pathContext
+								+ "]. Allowing the request through.");
+					}
 					chain.doFilter(req, resp);
 					return;
 				} else {
