@@ -37,6 +37,10 @@ dd {
 	margin-bottom: 1em;
 }
 
+ol ol {
+	list-style-type: lower-alpha;
+}
+
 table {
 	width: 100%;
 }
@@ -81,6 +85,10 @@ h1 img.icon {
 
 .note {
 	color: #666;
+}
+
+.notice {
+	color: #f90;
 }
 
 #toc {

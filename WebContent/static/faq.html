@@ -104,7 +104,7 @@
 
     <dt>How do I mount this site using WebDAV on MacOS X?</dt>
     <dd>
-      <ul>
+      <ol>
         <li>Go to "Finder" application</li>
         <li>Go to Menu-bar &rarr; "Go" &rarr; "Connect to
           Server..." (or press <code>⌘K</code>)
@@ -114,14 +114,14 @@
           "https://class-&lt;id&gt;.marakana.com/class/&lt;id&gt;/files/")</li>
         <li>Click on "Connect"</li>
         <li>When presented with a login dialog
-          <ul>
+          <ol>
             <li>Specify "Connect as:" &rarr; "Registered User"</li>
             <li>Enter your email as the "Name"</li>
             <li>Enter your password as the "Password"</li>
             <li>Optionally check "Remember this password in my
               keychain"</li>
             <li>Click on "Connect"</li>
-          </ul>
+          </ol>
         </li>
         <li>Go to "Finder" &rarr; "SHARED" (sidebar) &rarr;
           "class-&lt;id&gt;.marakana.com" &rarr; "files" to access your
@@ -129,18 +129,18 @@
         <li>This share is also accessible via <code>/Volumes/files/</code>
           folder (e.g. from "Terminal")
         </li>
-      </ul>
+      </ol>
       <br /> <span class="note">Replace &lt;id&gt; with the
         actual ID for the class you are trying to access.</span>
     </dd>
 
     <dt>How do I mount this site using WebDAV on Ubuntu Linux?</dt>
     <dd>
-      <ul>
+      <ol>
         <li>Go to "Places" toolbar</li>
         <li>Go to "Connect to Server..."</li>
         <li>In the "Connect to Server" dialog
-          <ul>
+          <ol>
             <li>Choose "Secure WebDAV (HTTPS)" as the "Service
               type"</li>
             <li>Enter "class-&lt;id&gt;.marakana.com" as the
@@ -151,14 +151,14 @@
             <li>Optionally "Add bookmark" and specify "Bookmark
               name" of your choosing</li>
             <li>Click on "Connect"</li>
-          </ul>
+          </ol>
         </li>
         <li>In the "Enter password for /class/&lt;id&gt;" dialog
-          <ul>
+          <ol>
             <li>Enter your password for "Password"</li>
             <li>Select "Remember password until you logout" option</li>
             <li>Click on "Connect"</li>
-          </ul>
+          </ol>
         </li>
         <li>Go to "Places" (or "Desktop") &rarr; "WebDAV on
           class-&lt;id&gt;.marakana.com" to access your files</li>
@@ -166,14 +166,63 @@
             on class-&lt;id&gt;.marakana.com"</code> folder (e.g. from
           "Terminal")
         </li>
-      </ul>
+      </ol>
+      <br /> <span class="note">Replace &lt;id&gt; with the
+        actual ID for the class you are trying to access.</span>
+    </dd>
+
+    <dt>How do I mount this site using WebDAV on Windows XP?</dt>
+    <dd>
+      <ol>
+        <li>Make sure that your Windows XP installation has all of
+          the latest Windows Update patches installed ("Start" &rarr;
+          "Settings" &rarr; "Control Panel" &rarr; "Windows Updates")</li>
+        <li>Go to "Windows Explorer"</li>
+        <li>Right-click on "My Computer" in the sidebar and select
+          "Map network drive..."</li>
+        <li>In the "Map Network Drive" dialog, click on "Sign up
+          for online storage or connect to a network server"</li>
+        <li>Click on "Next &gt;"</li>
+        <li>Select "Choose another network location..."</li>
+        <li>Click on "Next &gt;"</li>
+        <li>Under "Internet or network address" enter the base URL
+          to this site (i.e.
+          "https://class-&lt;id&gt;.marakana.com/class/&lt;id&gt;/files/")</li>
+        <li>Click on "Next &gt;"</li>
+        <li>In the "Enter Network Password" dialog
+          <ol>
+            <li>Enter your email address for "User name"</li>
+            <li>Enter your password for "Password"</li>
+            <li>Check "Save this password in your password list"
+              option</li>
+            <li>Click on "OK"</li>
+          </ol>
+        </li>
+        <li>In the "What you want to name this place?" dialog,
+          leave the default name, and click on "Next &gt;"</li>
+        <li>In the "Completing the Add Network Place Wizard"
+          dialog, leave "Open this network place when I click Finish"
+          checked, and click on "Finish"</li>
+        <li>Go to "Windows Explorer" &rarr; "My Network Places"
+          (sidebar) &rarr; "files on class-&lt;id&gt;.marakana.com" to
+          access the shared files</li>
+      </ol>
       <br /> <span class="note">Replace &lt;id&gt; with the
         actual ID for the class you are trying to access.</span>
     </dd>
 
     <dt>How do I mount this site using WebDAV on Windows 7?</dt>
     <dd>
+      We are still trying to come up with a foolproof recipe for native
+      WebDAV support in Windows 7.<br /> In the meantime, we invite you
+      to use one of the following free/OSS 3rd-party WebDAV clients:
       <ul>
+        <li><a href="http://www.bitkinex.com/webdavclient/">BitKinex</a></li>
+        <li><a href="http://cyberduck.ch/">Cyberduck</a></li>
+        
+      </ul>
+      <!--  
+      <ol>
         <li>Make sure that your Windows 7 installation has all of
           the latest Windows Update patches installed ("Start" &rarr;
           "All Programs" &rarr; "Windows Update")</li>
@@ -182,7 +231,7 @@
             update KB90730 – Web Folders</a>.
         </li>
         <li>Configure "WebClient" service to start automatically
-          <ul>
+          <ol>
             <li>Go to "Start" &rarr; "Control Panel" &rarr;
               "Administrative Tools" &rarr; "Services"</li>
             <li>Right click on "WebClient" service &rarr; "Start"</li>
@@ -192,10 +241,10 @@
             <li>Click on "OK"</li>
             <li>Close "Services" window</li>
             <li>Close "Administrative Tools" window</li>
-          </ul>
+          </ol>
         </li>
         <li>Enable Basic authorization over SSL
-          <ul>
+          <ol>
             <li>Go to "Command Prompt" and run "regedit"</li>
             <li>In "Registry Editor" window, go to
               "HKEY_LOCAL_MACHINE" &rarr; "SYSTEM" &rarr;
@@ -206,13 +255,13 @@
             <li>Click on "OK" to dismiss the dialog</li>
             <li>Close "Registry Editor" window</li>
             <li>Reboot</li>
-          </ul>
+          </ol>
         </li>
         <li>Go to "Windows Explorer"</li>
         <li>Right-click on "Computer" (or "Network") in the sidebar
           and select "Map network drive..."</li>
         <li>In the "Map Network Drive" dialog
-          <ul>
+          <ol>
             <li>Choose any letter you want (e.g. "Z:") for the
               "Drive" option</li>
             <li>enter the base URL to this site (i.e.
@@ -221,23 +270,17 @@
             <li>Optionally check "Reconnect at logon"</li>
             <li>Check "Connect using different credentials"</li>
             <li>Click on "Finish"</li>
-          </ul>
+          </ol>
         </li>
         <li>In the "Windows Security" dialog
-          <ul>
+          <ol>
             <li>Enter your email address for "User name"</li>
             <li>Enter your password for "Password"</li>
             <li>Optionally check "Remember my credentials" option</li>
             <li>Click on "OK"</li>
-          </ul>
+          </ol>
         </li>
-        <li>Go to "Places" (or "Desktop") &rarr; "WebDAV on
-          class-&lt;id&gt;.marakana.com" to access your files</li>
-        <li>This share is also accessible via <code>"~/.gvfs/WebDAV
-            on class-&lt;id&gt;.marakana.com"</code> folder (e.g. from
-          "Terminal")
-        </li>
-      </ul>
+      </ol>
       <br /> <span class="note">Replace &lt;id&gt; with the
         actual ID for the class you are trying to access.</span> <br /> <span
         class="note">The information for this how-to comes in
@@ -245,6 +288,7 @@
         href="http://www.scotttyee.com/blog/2011/07/24/mapping-a-network-drive-to-webdav-share-in-windows-7/">Mapping
           a Network Drive to WebDAV Share in Windows 7</a>.
       </span>
+      -->
     </dd>
 
     <dt>What is the "Download [this directory] as a ZIP file"
@@ -280,27 +324,37 @@
       you are participating in.<br /> We specifically ask that you <em>do
         not</em> upload content that is illegal, racist, sexist, violent,
       drug-related, political, religious, inappropriate, promotional,
-      discriminating, copyrighted, and/or irrelevant.<br /> <span
-        class="note">We take <em>no responsibility</em> for lost
-        or damaged content, please save/backup your files in your own
-        durable storage medium as well.
-      </span>
+      discriminating, copyrighted, and/or irrelevant.
+    </dd>
+
+    <dt>Will my files be safe? Can I use this for backup?</dt>
+    <dd>
+      We provide <em>no guarantees</em> for safe-keeping of your files
+      and we take <em>no responsibility</em> for lost or damaged
+      content. Please save/backup your files in your own durable storage
+      medium.
     </dd>
   </dl>
   <script type="text/javascript">
-	// <![CDATA[
-	$(document).ready(function() {
-		$("#toc").append("<ul>");
-		$("dt").each(function(i) {
-		    var current = $(this);
-		    current.attr("id", "title" + i);
-		    $("#toc").append("<li><a id='link" + i + "' href='#title" +
-		        i + "' title='" + current.attr("tagName") + "'>" + 
-		        current.html() + "</a></li>");
-		});
-		$("#toc").append("</ul>");
-	});
-	//]]>
-  </script>
+			// <![CDATA[
+			$(document).ready(
+					function() {
+						$("#toc").append("<ul>");
+						$("dt").each(
+								function(i) {
+									var current = $(this);
+									current.attr("id", "title" + i);
+									$("#toc").append(
+											"<li><a id='link" + i
+													+ "' href='#title" + i
+													+ "' title='"
+													+ current.attr("tagName")
+													+ "'>" + current.html()
+													+ "</a></li>");
+								});
+						$("#toc").append("</ul>");
+					});
+			//]]>
+		</script>
 </body>
 </html>
