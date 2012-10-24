@@ -1,14 +1,20 @@
 body {
-	font-family: sans-serif, Arial, Tahoma;
+	font-family: Arial, Tahoma, sans-serif;
 	color: black;
 	background-color: white;
 	font-size: 16px;
 }
 
+footer {
+	font-size: 0.7em;
+	color: #ccc;
+	text-align: center;
+}
+
 h1 {
 	color: black;
-	font-size: 20px;
-	height: 50px;
+	font-size: 1.3em;
+	height: 3em;
 	background: url('/images/logo-marakana-orange-gray-200x50.png')
 		no-repeat top right;
 }
@@ -21,12 +27,22 @@ hr {
 	color: #0086b2;
 }
 
+dt {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+dd {
+	padding: margin-top:   0.3em;
+	margin-bottom: 1em;
+}
+
 table {
 	width: 100%;
 }
 
 tr {
-	height: 20px;
+	height: 1.4em;
 }
 
 tbody tr:nth-child(odd) {
@@ -34,7 +50,7 @@ tbody tr:nth-child(odd) {
 }
 
 td {
-	height: 20px;
+	height: 1.4em;
 }
 
 img.icon {
@@ -50,7 +66,7 @@ h1 img.icon {
 
 .file-name,.file-name-header {
 	text-align: left;
-	height: 16px;
+	height: 1.2em;
 }
 
 .file-size,.file-size-header {
@@ -64,5 +80,5 @@ h1 img.icon {
 }
 
 .note {
-	color: #f90;
+	color: #666;
 }

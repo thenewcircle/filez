@@ -42,6 +42,9 @@
         </tbody>
       </table>
       <xsl:apply-templates select="readme"/>
+      <footer>
+        <a href="/static/faq.html">Frequently Asked Questions (FAQ)</a>
+      </footer>
       <script type="text/javascript">
 	    // <![CDATA[
           $(document).ready(function() {
