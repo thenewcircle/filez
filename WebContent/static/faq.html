@@ -10,13 +10,13 @@
   <h1>Frequently Asked Questions (FAQ)</h1>
   <div id="toc"></div>
   <dl>
-    <dt>What is this site?</dt>
+    <dt id="about">What is this site?</dt>
     <dd>
       <p>This is a file-sharing site, accessible via a web browser
         as well as a WebDAV client.</p>
     </dd>
 
-    <dt>What is the purpose of this site?</dt>
+    <dt id="purpose">What is the purpose of this site?</dt>
     <dd>
       <p>
         This site enables Marakana instructors and students to share
@@ -26,7 +26,7 @@
       </p>
     </dd>
 
-    <dt>What is the correct URL to access this site?</dt>
+    <dt id="url">What is the correct URL to access this site?</dt>
     <dd>
       <p>
         The base URL for a class with a specific
@@ -46,7 +46,7 @@
       </p>
     </dd>
 
-    <dt>Who gets access to this site?</dt>
+    <dt id="access">Who gets access to this site?</dt>
     <dd>
       <p>This site is accessible to the registered students and the
         instructor teaching the class.</p>
@@ -55,8 +55,8 @@
         - for maintenance reasons.</p>
     </dd>
 
-    <dt>How do I register for this class, so that I can access this
-      site?</dt>
+    <dt id="register">How do I register for this class, so that I
+      can access this site?</dt>
     <dd>
       <p>
         For public classes, you can register via our <a
@@ -71,7 +71,7 @@
         system - separate from ours.</p>
     </dd>
 
-    <dt>How do I log in to this site?</dt>
+    <dt id="login">How do I log in to this site?</dt>
     <dd>
       <p>To access this site, you need to log in with the same
         credentials you use to access Marakana.com site. Your username
@@ -87,7 +87,7 @@
         the network.</p>
     </dd>
 
-    <dt>I forgot my password. What do I do?</dt>
+    <dt id="password-reset">I forgot my password. What do I do?</dt>
     <dd>
       <p>
         You can <a href="https://marakana.com/reset_password.html">reset
@@ -96,7 +96,7 @@
       </p>
     </dd>
 
-    <dt>How do I log out of this site?</dt>
+    <dt id="logout">How do I log out of this site?</dt>
     <dd>
       <p>With the Basic access authentication, the client typically
         caches your username/password and sends them on every request.
@@ -112,21 +112,22 @@
       </ul>
     </dd>
 
-    <dt>I have access to multiple classes. Why do I have to log in
-      to each one separately?</dt>
+    <dt id="no-sso">I have access to multiple classes. Why do I
+      have to log in to each one separately?</dt>
     <dd>
       <p>For security reasons, each class is accessible under a
         unique domain name. Your credentials are domain-specific as far
         as your browser/client is concerned.</p>
     </dd>
 
-    <dt>How long will I have access to this site?</dt>
+    <dt id="duration">How long will I have access to this site?</dt>
     <dd>
       <p>You will retain access to this site for as long as you
         maintain an active account on Marakana.com.</p>
     </dd>
 
-    <dt>How do I mount this site using WebDAV on MacOS X?</dt>
+    <dt id="webdav-macosx">How do I mount this site using WebDAV on
+      MacOS X?</dt>
     <dd>
       <ol>
         <li>Go to "Finder" application</li>
@@ -158,7 +159,8 @@
         class you are trying to access.</p>
     </dd>
 
-    <dt>How do I mount this site using WebDAV on Ubuntu Linux?</dt>
+    <dt id="webdav-ubuntu">How do I mount this site using WebDAV on
+      Ubuntu Linux (10.04)?</dt>
     <dd>
       <ol>
         <li>Go to "Places" toolbar</li>
@@ -196,7 +198,8 @@
         class you are trying to access.</p>
     </dd>
 
-    <dt>How do I mount this site using WebDAV on Windows XP?</dt>
+    <dt id="webdav-windowsxp">How do I mount this site using WebDAV
+      on Windows XP?</dt>
     <dd>
       <ol>
         <li>Make sure that your Windows XP installation has all of
@@ -238,7 +241,8 @@
         class you are trying to access.</p>
     </dd>
 
-    <dt>How do I mount this site using WebDAV on Windows 7?</dt>
+    <dt id="webdav-windows7">How do I mount this site using WebDAV
+      on Windows 7?</dt>
     <dd>
       <ol>
         <li>Make sure that your Windows 7 installation has all of
@@ -284,8 +288,8 @@
       </ul>
     </dd>
 
-    <dt>What is the "Download [this directory] as a ZIP file"
-      feature?</dt>
+    <dt id="download-as-zip">What is the "Download [this directory]
+      as a ZIP file" feature?</dt>
     <dd>
       <p>This feature allows your web-browser to download any
         file/directory on this site as a ZIP file.</p>
@@ -294,7 +298,7 @@
         archives are streamed to your browser and never cached.</p>
     </dd>
 
-    <dt>
+    <dt id="readme">
       What makes
       <code>README.html</code>
       files so special?
@@ -315,7 +319,8 @@
       </p>
     </dd>
 
-    <dt>What kind of content can I upload this site?</dt>
+    <dt id="content-restrictions">What kind of content can I upload
+      this site?</dt>
     <dd>
       <p>We ask that you only upload content related to the training
         class you are participating in.</p>
@@ -328,7 +333,8 @@
       </p>
     </dd>
 
-    <dt>Will my files be safe? Can I use this for backup?</dt>
+    <dt id="no-content-guarantees">Will my files be safe? Can I use
+      this for backup?</dt>
     <dd>
       <p>
         We provide <em>no guarantees</em> for safe-keeping or ensuring
@@ -343,23 +349,25 @@
   </dl>
   <script type="text/javascript">
 			// <![CDATA[
-			$(document).ready(
-					function() {
-						$("#toc").append("<ul>");
-						$("dt").each(
-								function(i) {
-									var current = $(this);
-									current.attr("id", "faq" + i);
-									$("#toc").append(
-											"<li><a id='link" + i
-													+ "' href='#faq" + i
-													+ "' title='"
-													+ current.attr("tagName")
-													+ "'>" + current.html()
-													+ "</a></li>");
-								});
-						$("#toc").append("</ul>");
-					});
+			$(document)
+					.ready(
+							function() {
+								$("#toc").append("<ul>");
+								$("dt")
+										.each(
+												function(i) {
+													var current = $(this);
+													var id = current.attr("id");
+													$("#toc")
+															.append(
+																	"<li><a id='link" + i + "' href='#"
+													+ id + "' title='Jump to this question'>"
+																			+ current
+																					.html()
+																			+ "</a></li>");
+												});
+								$("#toc").append("</ul>");
+							});
 			//]]>
 		</script>
 </body>
