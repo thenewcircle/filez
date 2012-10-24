@@ -7,9 +7,9 @@
 <title>Frequently Asked Questions</title>
 </head>
 <body>
-  <h1>Frequently Asked Questions</h1>
+  <h1>Frequently Asked Questions (FAQ)</h1>
+  <div id="toc"></div>
   <dl>
-
     <dt>What is this site?</dt>
     <dd>This is a file-sharing site, accessible via a web browser
       as well as a WebDAV client.</dd>
@@ -278,7 +278,7 @@
     <dd>
       We ask that you only upload content related to the training class
       you are participating in.<br /> We specifically ask that you <em>do
-        not</em> upload content that is racist, sexist, violent,
+        not</em> upload content that is illegal, racist, sexist, violent,
       drug-related, political, religious, inappropriate, promotional,
       discriminating, copyrighted, and/or irrelevant.<br /> <span
         class="note">We take <em>no responsibility</em> for lost
@@ -286,7 +286,21 @@
         durable storage medium as well.
       </span>
     </dd>
-
   </dl>
+  <script type="text/javascript">
+	// <![CDATA[
+	$(document).ready(function() {
+		$("#toc").append("<ul>");
+		$("dt").each(function(i) {
+		    var current = $(this);
+		    current.attr("id", "title" + i);
+		    $("#toc").append("<li><a id='link" + i + "' href='#title" +
+		        i + "' title='" + current.attr("tagName") + "'>" + 
+		        current.html() + "</a></li>");
+		});
+		$("#toc").append("</ul>");
+	});
+	//]]>
+  </script>
 </body>
 </html>

@@ -82,3 +82,8 @@ h1 img.icon {
 .note {
 	color: #666;
 }
+
+#toc {
+	font-size: 0.8em;
+	color: #333;	
+}
