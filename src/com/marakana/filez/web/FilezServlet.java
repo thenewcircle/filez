@@ -234,10 +234,11 @@ public class FilezServlet extends WebdavServlet {
 				for (@SuppressWarnings("unchecked")
 				NamingEnumeration<NameClassPair> enumeration = resources
 						.list(cacheEntry.name); enumeration.hasMoreElements();) {
-					count += zip(
-							resources.lookupCache(cacheEntry.name + '/'
-									+ enumeration.nextElement().getName()),
-							nameOffset, zos);
+					count += zip(resources.lookupCache((cacheEntry.name
+							.endsWith("/") ? cacheEntry.name
+							: cacheEntry.name + '/')
+							+ enumeration.nextElement().getName()), nameOffset,
+							zos);
 				}
 				return count;
 			} catch (NamingException e) {
