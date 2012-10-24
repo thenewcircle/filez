@@ -139,7 +139,7 @@
       <ol>
         <li>Go to "Places" toolbar</li>
         <li>Go to "Connect to Server..."</li>
-        <li>In the "Connect to Server" dialog
+        <li>When presented with the "Connect to Server" dialog
           <ol>
             <li>Choose "Secure WebDAV (HTTPS)" as the "Service
               type"</li>
@@ -153,7 +153,8 @@
             <li>Click on "Connect"</li>
           </ol>
         </li>
-        <li>In the "Enter password for /class/&lt;id&gt;" dialog
+        <li>When presented with the "Enter password for
+          /class/&lt;id&gt;" dialog
           <ol>
             <li>Enter your password for "Password"</li>
             <li>Select "Remember password until you logout" option</li>
@@ -178,10 +179,11 @@
           the latest Windows Update patches installed ("Start" &rarr;
           "Settings" &rarr; "Control Panel" &rarr; "Windows Updates")</li>
         <li>Go to "Windows Explorer"</li>
-        <li>Right-click on "My Computer" in the sidebar and select
-          "Map network drive..."</li>
-        <li>In the "Map Network Drive" dialog, click on "Sign up
-          for online storage or connect to a network server"</li>
+        <li>Right-click on "My Computer" (sidebar) and select "Map
+          network drive..."</li>
+        <li>When presented with the "Map Network Drive" dialog,
+          click on "Sign up for online storage or connect to a network
+          server"</li>
         <li>Click on "Next &gt;"</li>
         <li>Select "Choose another network location..."</li>
         <li>Click on "Next &gt;"</li>
@@ -189,7 +191,7 @@
           to this site (i.e.
           "https://class-&lt;id&gt;.marakana.com/class/&lt;id&gt;/files/")</li>
         <li>Click on "Next &gt;"</li>
-        <li>In the "Enter Network Password" dialog
+        <li>When presented with the "Enter Network Password" dialog
           <ol>
             <li>Enter your email address for "User name"</li>
             <li>Enter your password for "Password"</li>
@@ -198,11 +200,12 @@
             <li>Click on "OK"</li>
           </ol>
         </li>
-        <li>In the "What you want to name this place?" dialog,
-          leave the default name, and click on "Next &gt;"</li>
-        <li>In the "Completing the Add Network Place Wizard"
-          dialog, leave "Open this network place when I click Finish"
-          checked, and click on "Finish"</li>
+        <li>When presented with the "What you want to name this
+          place?" dialog, leave the default name, and click on "Next
+          &gt;"</li>
+        <li>When presented with the "Completing the Add Network
+          Place Wizard" dialog, leave "Open this network place when I
+          click Finish" checked, and click on "Finish"</li>
         <li>Go to "Windows Explorer" &rarr; "My Network Places"
           (sidebar) &rarr; "files on class-&lt;id&gt;.marakana.com" to
           access the shared files</li>
@@ -213,54 +216,14 @@
 
     <dt>How do I mount this site using WebDAV on Windows 7?</dt>
     <dd>
-      We are still trying to come up with a foolproof recipe for native
-      WebDAV support in Windows 7.<br /> In the meantime, we invite you
-      to use one of the following free/OSS 3rd-party WebDAV clients:
-      <ul>
-        <li><a href="http://www.bitkinex.com/webdavclient/">BitKinex</a></li>
-        <li><a href="http://cyberduck.ch/">Cyberduck</a></li>
-        
-      </ul>
-      <!--  
       <ol>
         <li>Make sure that your Windows 7 installation has all of
           the latest Windows Update patches installed ("Start" &rarr;
           "All Programs" &rarr; "Windows Update")</li>
-        <li>Install support for <a
-          href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=15123">Microsoft
-            update KB90730 – Web Folders</a>.
-        </li>
-        <li>Configure "WebClient" service to start automatically
-          <ol>
-            <li>Go to "Start" &rarr; "Control Panel" &rarr;
-              "Administrative Tools" &rarr; "Services"</li>
-            <li>Right click on "WebClient" service &rarr; "Start"</li>
-            <li>Right click on "WebClient" service &rarr;
-              "Properties"</li>
-            <li>Change "Startup type" to "Automatic"</li>
-            <li>Click on "OK"</li>
-            <li>Close "Services" window</li>
-            <li>Close "Administrative Tools" window</li>
-          </ol>
-        </li>
-        <li>Enable Basic authorization over SSL
-          <ol>
-            <li>Go to "Command Prompt" and run "regedit"</li>
-            <li>In "Registry Editor" window, go to
-              "HKEY_LOCAL_MACHINE" &rarr; "SYSTEM" &rarr;
-              "CurrentControlSet" &rarr; "services" &rarr; "WebClient"
-              &rarr; "Parameters"</li>
-            <li>Double-click on "BasicAuthLevel" and change "Value
-              data" to "2"</li>
-            <li>Click on "OK" to dismiss the dialog</li>
-            <li>Close "Registry Editor" window</li>
-            <li>Reboot</li>
-          </ol>
-        </li>
         <li>Go to "Windows Explorer"</li>
-        <li>Right-click on "Computer" (or "Network") in the sidebar
-          and select "Map network drive..."</li>
-        <li>In the "Map Network Drive" dialog
+        <li>Right-click on "Computer" (sidebar) and select "Map
+          network drive..."</li>
+        <li>When presented with the "Map Network Drive" dialog
           <ol>
             <li>Choose any letter you want (e.g. "Z:") for the
               "Drive" option</li>
@@ -272,7 +235,7 @@
             <li>Click on "Finish"</li>
           </ol>
         </li>
-        <li>In the "Windows Security" dialog
+        <li>When presented with the "Windows Security" dialog
           <ol>
             <li>Enter your email address for "User name"</li>
             <li>Enter your password for "Password"</li>
@@ -280,15 +243,21 @@
             <li>Click on "OK"</li>
           </ol>
         </li>
+        <li>Go to "Windows Explorer" &rarr; "Computer" (sidebar)
+          &rarr; "files (\\class-&lt;id&gt;.marakana.com...)" to access
+          the shared files</li>
+        <li>You can also access your files via the "Command Prompt"
+          if you go to the drive letter assigned during the mapping step
+          (e.g. "Z:").</li>
       </ol>
       <br /> <span class="note">Replace &lt;id&gt; with the
-        actual ID for the class you are trying to access.</span> <br /> <span
-        class="note">The information for this how-to comes in
-        part from <a
-        href="http://www.scotttyee.com/blog/2011/07/24/mapping-a-network-drive-to-webdav-share-in-windows-7/">Mapping
-          a Network Drive to WebDAV Share in Windows 7</a>.
-      </span>
-      -->
+        actual ID for the class you are trying to access.</span>
+      <p>If you run into any problems you can also try one of the
+        following free/OSS 3rd-party WebDAV clients:</p>
+      <ul>
+        <li><a href="http://www.bitkinex.com/webdavclient/">BitKinex</a></li>
+        <li><a href="http://cyberduck.ch/">Cyberduck</a></li>
+      </ul>
     </dd>
 
     <dt>What is the "Download [this directory] as a ZIP file"
@@ -324,15 +293,19 @@
       you are participating in.<br /> We specifically ask that you <em>do
         not</em> upload content that is illegal, racist, sexist, violent,
       drug-related, political, religious, inappropriate, promotional,
-      discriminating, copyrighted, and/or irrelevant.
+      discriminating, copyrighted, confidential (except for class
+      materials), and/or irrelevant.
     </dd>
 
     <dt>Will my files be safe? Can I use this for backup?</dt>
     <dd>
-      We provide <em>no guarantees</em> for safe-keeping of your files
-      and we take <em>no responsibility</em> for lost or damaged
-      content. Please save/backup your files in your own durable storage
-      medium.
+      We provide <em>no guarantees</em> for safe-keeping or ensuring
+      confidentiality of your files and we take <em>no
+        responsibility</em> for leaked, lost or damaged content.<br />
+      Please save/backup your files in your own durable storage medium.
+      Since this site is meant for (limited) file sharing, please do not
+      upload any sensitive or confidential (except for class materials)
+      content.
     </dd>
   </dl>
   <script type="text/javascript">
