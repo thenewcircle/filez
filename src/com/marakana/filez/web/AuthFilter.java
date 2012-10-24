@@ -1,6 +1,7 @@
 package com.marakana.filez.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -76,11 +77,27 @@ public class AuthFilter implements Filter {
 		if (usernameAndPassword == null) {
 			if (logger.isTraceEnabled()) {
 				logger.trace("Requiring Authentication for realm: " + realm
-						+ " for request " + WebUtil.dump(httpReq, null));
+						+ " for request " + WebUtil.dump(httpReq, null)
+						+ ". Sending back "
+						+ HttpServletResponse.SC_UNAUTHORIZED);
 			}
 			httpResp.setHeader("WWW-Authenticate",
 					String.format("Basic realm=\"%s\"", realm));
-			httpResp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+			String httpMethod = httpReq.getMethod();
+			if ("GET".equals(httpMethod) || "POST".equals(httpMethod)) {
+				httpResp.sendError(HttpServletResponse.SC_UNAUTHORIZED,
+						"Please authenticate");
+			} else {
+				httpResp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				httpResp.setContentType("text/plain");
+				PrintWriter out = httpResp.getWriter();
+				out.println("You must authenticate in order to access this page.");
+				out.printf("See %s://%s:%d/static/faq.html for more info\n",
+						req.getScheme(), req.getServerName(),
+						req.getServerPort());
+				out.close();
+			}
+			return;
 		} else {
 			if (logger.isTraceEnabled()) {
 				logger.trace("Authorizing " + usernameAndPassword + " for "
