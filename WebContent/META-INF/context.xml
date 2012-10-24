@@ -4,5 +4,7 @@
 	<Environment name="com.marakana.filez.service.HttpAuthService.urlFormat"
 		type="java.lang.String" value="https://marakana.com/authorize/%s/%s"
 		override="false" />
-	<Valve className="org.apache.catalina.valves.WebdavFixValve" />
+	<!-- 
+	<Valve className="org.apache.catalina.valves.WebdavFixValve" /> 
+	-->
 </Context>
