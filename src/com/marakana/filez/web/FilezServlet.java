@@ -92,6 +92,12 @@ public class FilezServlet extends WebdavServlet {
 			} else {
 				// not a base-uri request; ignoring
 			}
+			if ("GET".equals(req.getMethod())
+					&& "zip".equals(req.getParameter("as"))) {
+				this.doZipDownload(req, resp);
+			} else {
+				super.service(req, resp);
+			}
 		} else {
 			// TODO: this should really go to a filter
 			if (logger.isErrorEnabled()) {
@@ -102,13 +108,6 @@ public class FilezServlet extends WebdavServlet {
 			resp.sendError(HttpServletResponse.SC_FORBIDDEN,
 					"Unauthorized path: " + path);
 			return;
-		}
-
-		if ("GET".equals(req.getMethod())
-				&& "zip".equals(req.getParameter("as"))) {
-			this.doZipDownload(req, resp);
-		} else {
-			super.service(req, resp);
 		}
 	}
 
