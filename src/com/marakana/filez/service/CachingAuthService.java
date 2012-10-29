@@ -105,8 +105,10 @@ public class CachingAuthService implements AuthService {
 			case OK:
 				break;
 			case FORBIDDEN:
-				if (!this.cacheForbidden) {
+				if (this.cacheForbidden) {
 					break;
+				} else {
+					// fall-through to default
 				}
 			default:
 				this.cache.invalidate(tuple);
