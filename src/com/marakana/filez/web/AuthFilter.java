@@ -119,17 +119,21 @@ public class AuthFilter implements Filter {
 					break;
 				case UNAUTHORIZED:
 					if (logger.isDebugEnabled()) {
-						logger.trace(String.format(
-								"%s is not authorized to access %s (%.3f ms)",
-								usernameAndPassword, realm, durationInMs));
+						logger.trace(String
+								.format("%s from %s is not authorized to access %s (%.3f ms)",
+										usernameAndPassword,
+										httpReq.getRemoteAddr(), realm,
+										durationInMs));
 					}
 					httpResp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
 					break;
 				case FORBIDDEN:
 					if (logger.isDebugEnabled()) {
-						logger.trace(String.format(
-								"%s is forbidden from accessing %s (%.3f ms)",
-								usernameAndPassword, realm, durationInMs));
+						logger.trace(String
+								.format("%s from %s is forbidden from accessing %s (%.3f ms)",
+										usernameAndPassword,
+										httpReq.getRemoteAddr(), realm,
+										durationInMs));
 					}
 					httpResp.sendError(HttpServletResponse.SC_FORBIDDEN);
 					break;
@@ -138,14 +142,15 @@ public class AuthFilter implements Filter {
 				if (logger.isErrorEnabled()) {
 					logger.error(
 							String.format(
-									"%s is prevented from accessing %s due to an internal server error",
-									usernameAndPassword, realm), e);
+									"%s from %s is prevented from accessing %s due to an internal server error",
+									usernameAndPassword,
+									httpReq.getRemoteAddr(), realm), e);
 				}
 				httpResp.sendError(
 						HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
 						"The server encountered an error while trying to auth ["
 								+ usernameAndPassword.getUsername()
-								+ "]. Please try again later");
+								+ "]. Please try again later.");
 			}
 		}
 	}

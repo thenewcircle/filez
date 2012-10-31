@@ -110,6 +110,8 @@ public class CachingAuthService implements AuthService {
 				} else {
 					// fall-through to default
 				}
+			case UNAUTHORIZED:
+				// fall-through to default
 			default:
 				this.cache.invalidate(tuple);
 			}

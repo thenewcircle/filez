@@ -61,6 +61,10 @@ public class HttpAuthService implements AuthService {
 
 	private AuthResult auth(UsernameAndPassword usernameAndPassword,
 			Realm realm, int tryCounter) throws AuthServiceException {
+		if (logger.isTraceEnabled()) {
+			logger.trace("Auth " + usernameAndPassword + " for " + realm
+					+ " (#" + tryCounter + " try)");
+		}
 		try {
 			URL url = new URL(String.format(this.urlFormat, realm.getName(),
 					realm.getContext()));
@@ -89,10 +93,25 @@ public class HttpAuthService implements AuthService {
 			switch (response) {
 			case 200:
 			case 204:
+				if (logger.isTraceEnabled()) {
+					logger.trace(usernameAndPassword
+							+ " is authorized to access " + realm + " (after "
+							+ tryCounter + " tries)");
+				}
 				return AuthResult.OK;
 			case 401:
+				if (logger.isTraceEnabled()) {
+					logger.trace(usernameAndPassword
+							+ " is not authorized to access " + realm
+							+ " (after " + tryCounter + " tries)");
+				}
 				return AuthResult.UNAUTHORIZED;
 			case 403:
+				if (logger.isTraceEnabled()) {
+					logger.trace(usernameAndPassword
+							+ " is forbidden from accessing " + realm
+							+ " (after " + tryCounter + " tries)");
+				}
 				return AuthResult.FORBIDDEN;
 			case 503:
 				if (tryCounter <= maxRetries) {
@@ -108,7 +127,7 @@ public class HttpAuthService implements AuthService {
 			default:
 				throw new AuthServiceException("Failed to auth "
 						+ usernameAndPassword + " for " + realm
-						+ ". Got response code [" + response
+						+ ". Got unexpected response code [" + response
 						+ "] and message [" + responseMessage + "]");
 			}
 		} catch (IOException e) {
