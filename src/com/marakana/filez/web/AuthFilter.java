@@ -36,9 +36,9 @@ public class AuthFilter implements Filter {
 			.getName() + ".cacheForbidden";
 	private static final String USERNAME_AND_PASSWORD_PARSER_TYPE_PARAM = UsernameAndPasswordParser.Factory.class
 			.getName() + ".type";
-
 	private static final String REALM_PARSER_TYPE_PARAM = RealmParser.Factory.class
 			.getName() + ".type";
+	private static final String WWW_AUTHENTICATE_HEADER = "WWW-Authenticate";
 
 	private static Logger logger = LoggerFactory.getLogger(AuthFilter.class);
 	private AuthService authService;
@@ -65,6 +65,10 @@ public class AuthFilter implements Filter {
 		}
 	}
 
+	private String getAuthenticateHeaderValue(Realm realm) {
+		return String.format("Basic realm=\"%s\"", realm);
+	}
+
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp,
 			FilterChain chain) throws IOException, ServletException {
@@ -81,8 +85,8 @@ public class AuthFilter implements Filter {
 						+ ". Sending back "
 						+ HttpServletResponse.SC_UNAUTHORIZED);
 			}
-			httpResp.setHeader("WWW-Authenticate",
-					String.format("Basic realm=\"%s\"", realm));
+			httpResp.setHeader(WWW_AUTHENTICATE_HEADER,
+					this.getAuthenticateHeaderValue(realm));
 			String httpMethod = httpReq.getMethod();
 			if ("GET".equals(httpMethod) || "POST".equals(httpMethod)) {
 				httpResp.sendError(HttpServletResponse.SC_UNAUTHORIZED,
@@ -125,6 +129,8 @@ public class AuthFilter implements Filter {
 										httpReq.getRemoteAddr(), realm,
 										durationInMs));
 					}
+					httpResp.setHeader(WWW_AUTHENTICATE_HEADER,
+							this.getAuthenticateHeaderValue(realm));
 					httpResp.sendError(HttpServletResponse.SC_UNAUTHORIZED);
 					break;
 				case FORBIDDEN:
