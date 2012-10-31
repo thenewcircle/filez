@@ -119,7 +119,7 @@ public class AuthFilter implements Filter {
 					break;
 				case UNAUTHORIZED:
 					if (logger.isDebugEnabled()) {
-						logger.trace(String
+						logger.debug(String
 								.format("%s from %s is not authorized to access %s (%.3f ms)",
 										usernameAndPassword,
 										httpReq.getRemoteAddr(), realm,
@@ -129,7 +129,7 @@ public class AuthFilter implements Filter {
 					break;
 				case FORBIDDEN:
 					if (logger.isDebugEnabled()) {
-						logger.trace(String
+						logger.debug(String
 								.format("%s from %s is forbidden from accessing %s (%.3f ms)",
 										usernameAndPassword,
 										httpReq.getRemoteAddr(), realm,
