@@ -68,7 +68,7 @@ public class AuthFilter implements Filter {
 	private String getAuthenticateHeaderValue(Realm realm) {
 		return String
 				.format("Basic realm=\"In order to access %s %s you need to log in using your email address and password that you've previously registered on our site.\"",
-						realm.getContext(), realm.getName());
+						realm.getName(), realm.getContext());
 	}
 
 	@Override
